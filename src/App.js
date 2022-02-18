@@ -1,5 +1,7 @@
+import DeliveryManagement from 'pages/DeliveryManagement';
+
 function App() {
-  return <div>HELLO!</div>;
+  return <DeliveryManagement />;
 }
 
 export default App;
