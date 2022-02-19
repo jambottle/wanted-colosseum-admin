@@ -58,7 +58,7 @@ export default function RequestInfo() {
 
       <CardContent>
         <Grid container>
-          <Grid container item xs={5.5} spacing={4} sx={{ px: 1 }}>
+          <Grid container item md={12} lg={5.5} spacing={4} sx={{ px: 1 }}>
             <Grid
               item
               sx={{ fontSize: '16px', fontWeight: '600', lineHeight: 3.5 }}
@@ -91,7 +91,7 @@ export default function RequestInfo() {
             </Grid>
           </Grid>
 
-          <Grid container item xs={6.5} spacing={4} sx={{ px: 1 }}>
+          <Grid container item md={12} lg={6.5} spacing={4} sx={{ px: 1 }}>
             <Grid
               item
               sx={{ fontSize: '16px', fontWeight: '600', lineHeight: 3.5 }}
@@ -126,7 +126,7 @@ export default function RequestInfo() {
         </Grid>
 
         <Grid container>
-          <Grid container item xs={6.5} spacing={4} sx={{ px: 1 }}>
+          <Grid container item md={12} lg={6.5} spacing={4} sx={{ px: 1 }}>
             <Grid
               item
               sx={{ fontSize: '16px', fontWeight: '600', lineHeight: 3.5 }}
@@ -198,7 +198,7 @@ export default function RequestInfo() {
             </Grid>
           </Grid>
 
-          <Grid container item xs={5.5} spacing={4} sx={{ px: 1 }}>
+          <Grid container item md={12} lg={5.5} spacing={4} sx={{ px: 1 }}>
             <Grid
               item
               sx={{ fontSize: '16px', fontWeight: '600', lineHeight: 3.5 }}
