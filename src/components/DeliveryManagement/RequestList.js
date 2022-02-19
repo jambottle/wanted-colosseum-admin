@@ -509,7 +509,7 @@ export default function RequestList() {
       <CardHeader
         variant="h5"
         title="출고 요청서 매핑 리스트"
-        subheader="데이터 출처: (엑셀) 테스트_콜로세움주문서_test.xls"
+        subheader="데이터 출처: 테스트_콜로세움주문서_test.xls (엑셀)"
         sx={{ mb: -1 }}
         titleTypographyProps={{
           fontSize: '21px',

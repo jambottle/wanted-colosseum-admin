@@ -108,7 +108,7 @@
 
 - [x] **출고 요청서 매핑 리스트** (`RequestList` 컴포넌트)
 
-  <img src="https://user-images.githubusercontent.com/72926450/154791804-629969f1-fde4-42b6-89bb-174d57d7fe5c.png" width="960px" />
+  <img src="https://user-images.githubusercontent.com/72926450/154797194-3d96d8ce-6f19-49b5-983d-c2f5ec7dee33.png" width="960px" />
 
   - [x] MUI 내장 템플릿 중 Collapsible Table을 활용하여 기존의 가로형 테이블을 두 개의 계층을 지닌 테이블로 수정
   - [x] 우선순위가 높은 데이터를 1계층 테이블에서 먼저 보여주고, 그 외의 데이터는 2계층 테이블을 열어서 확인 가능
