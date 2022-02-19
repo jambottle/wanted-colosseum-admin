@@ -20,6 +20,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Chip from '@mui/material/Chip';
 
 function createOrderData(
   id,
@@ -55,6 +56,17 @@ function Row(props) {
   const { row } = props;
   const [open, setOpen] = useState(false);
 
+  const getChipColored = value => {
+    if (value.includes('성공') || value.includes('완료')) return 'success';
+    if (value.includes('대기')) return 'warning';
+    if (
+      value.includes('실패') ||
+      value.includes('취소') ||
+      value.includes('부족')
+    )
+      return 'error';
+  };
+
   return (
     <>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -75,13 +87,18 @@ function Row(props) {
         <TableCell>{row.productUnit}</TableCell>
         <TableCell>{row.productAmount}</TableCell>
         <TableCell>{row.deliveryAmount}</TableCell>
-        <TableCell>{row.isOutOfStock}</TableCell>
+        <TableCell>
+          <Chip
+            label={row.isOutOfStock}
+            color={getChipColored(row.isOutOfStock)}
+          />
+        </TableCell>
         <TableCell>{row.recipientName}</TableCell>
         <TableCell>{row.recipientContact1}</TableCell>
-        <TableCell sx={{ maxWidth: '250px' }}>
+        <TableCell sx={{ maxWidth: '200px' }}>
           {row.recipientAddress1}
         </TableCell>
-        <TableCell sx={{ minWidth: '120px' }}>
+        <TableCell sx={{ minWidth: '100px' }}>
           {row.recipientZipcode1}
         </TableCell>
       </TableRow>
@@ -151,11 +168,11 @@ function Row(props) {
                     <TableCell>출고 창고명</TableCell>
                     <TableCell>택배사명</TableCell>
                     <TableCell>수취인 번호 2</TableCell>
-                    <TableCell sx={{ maxWidth: '250px' }}>
+                    <TableCell sx={{ maxWidth: '200px' }}>
                       수취인 주소 2
                     </TableCell>
-                    <TableCell sx={{ minWidth: '125px' }}>우편번호 2</TableCell>
-                    <TableCell sx={{ minWidth: '125px' }}>메모</TableCell>
+                    <TableCell sx={{ minWidth: '100px' }}>우편번호 2</TableCell>
+                    <TableCell sx={{ minWidth: '150px' }}>메모</TableCell>
                   </TableRow>
                 </TableHead>
 
@@ -170,13 +187,13 @@ function Row(props) {
                       <TableCell>{info.deliveryStorage}</TableCell>
                       <TableCell>{info.deliveryCompany}</TableCell>
                       <TableCell>{row.recipientContact2}</TableCell>
-                      <TableCell sx={{ maxWidth: '250px' }}>
+                      <TableCell sx={{ maxWidth: '200px' }}>
                         {row.recipientAddress2}
                       </TableCell>
-                      <TableCell sx={{ minWidth: '125px' }}>
+                      <TableCell sx={{ minWidth: '100px' }}>
                         {row.recipientZipcode2}
                       </TableCell>
-                      <TableCell sx={{ minWidth: '125px' }}>
+                      <TableCell sx={{ minWidth: '150px' }}>
                         배송 메시지: {info.deliveryMemo}
                       </TableCell>
                     </TableRow>
@@ -232,10 +249,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '출고 주문 완료',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -255,10 +272,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '출고 주문 완료',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -278,10 +295,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '출고 주문 완료',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -301,10 +318,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '출고 주문 완료',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -327,7 +344,7 @@ const ROWS = [
     '출고 주문 대기',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -350,7 +367,7 @@ const ROWS = [
     '출고 주문 대기',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -373,7 +390,7 @@ const ROWS = [
     '출고 주문 대기',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -396,7 +413,7 @@ const ROWS = [
     '출고 주문 대기',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -416,10 +433,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '재고 부족 취소',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -439,10 +456,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '재고 부족 취소',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -462,10 +479,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '재고 부족 취소',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -485,10 +502,10 @@ const ROWS = [
     1,
     1,
     1,
-    '출고 주문 대기',
+    '재고 부족 취소',
     '김재원',
     '010-0000-0000',
-    '서울특별시 서대문구 연세로 50, 현대 아이파크 오피스텔 505동 5005호',
+    '서울시 서대문구 연세로 50, 현대 오피스텔 505동 5005호',
     '03722',
     [
       {
@@ -533,8 +550,8 @@ export default function RequestList() {
                 <TableCell>재고 부족 여부</TableCell>
                 <TableCell>수취인</TableCell>
                 <TableCell>수취인 번호 1</TableCell>
-                <TableCell sx={{ maxWidth: '250px' }}>수취인 주소 1</TableCell>
-                <TableCell sx={{ minWidth: '125px' }}>우편번호 1</TableCell>
+                <TableCell sx={{ maxWidth: '200px' }}>수취인 주소 1</TableCell>
+                <TableCell sx={{ minWidth: '100px' }}>우편번호 1</TableCell>
               </TableRow>
             </TableHead>
 
