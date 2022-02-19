@@ -46,11 +46,14 @@ export default function RequestInfo() {
   return (
     <Card component="section" sx={{ mt: 2, p: 1 }}>
       <CardHeader
-        component="h5"
+        variant="h4"
         title="출고 신청 정보"
-        subheader="September 14, 2016"
         sx={{ mt: 1, mb: -2 }}
-        titleTypographyProps={{ variant: 'h5', fontWeight: '600' }}
+        titleTypographyProps={{
+          fontSize: '24px',
+          fontWeight: '600',
+          lineHeight: '1.4',
+        }}
       />
 
       <CardContent>
